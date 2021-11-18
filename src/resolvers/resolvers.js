@@ -1,4 +1,4 @@
-import coursesModel from './models/courses.model.js';
+import coursesModel from '../models/courses.model.js';
 
 const resolvers = {
     Query: {
@@ -22,4 +22,4 @@ const resolvers = {
     }
 }
 
-export default resolvers;
+export default courseResolver;

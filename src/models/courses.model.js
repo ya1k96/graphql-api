@@ -5,7 +5,8 @@ const {String, Number} = SchemaTypes;
 const schema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     description: {
         type: String,

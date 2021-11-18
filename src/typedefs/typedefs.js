@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-const typeDef = gql`
+const courseTypeDef = gql`
 type Course {
     id: ID,
     title: String!,
@@ -26,4 +26,4 @@ type Mutation {
 }
 `;
 
-export default typeDef;
+export default courseTypeDef;

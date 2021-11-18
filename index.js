@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 import mongoose from 'mongoose';
-import typeDef from './typedefs.js';
-import resolvers from './resolvers.js';
+import typeDefs from './src/typedefs/index.js';
+import resolvers from './src/resolvers/index.js';
 
 const {connect} = mongoose;
 
@@ -11,7 +11,7 @@ connect(stringConnection)
 .then(() => console.log('DB connected.'));
 
 const server = new ApolloServer({
-    typeDefs: typeDef,
+    typeDefs,
     resolvers
 });
 
