@@ -1,5 +1,6 @@
-import courseTypeDef from "./typedefs";
+import courseType from "./courseType.js";
+import studentType from "./studentType.js";
 
-const typeDefs = [courseTypeDef];
+const typeDefs = [courseType, studentType];
 
 export default typeDefs;

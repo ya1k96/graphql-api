@@ -1,13 +1,14 @@
 import { gql } from 'apollo-server';
 
-const courseTypeDef = gql`
+const courseTypeDef = gql(`
 type Course {
     id: ID,
     title: String!,
     description: String!,
     views: Int,
     price: Float!
-    info: String
+    info: String,
+    students: [Student]
 }
 
 type Query {
@@ -22,8 +23,20 @@ type Mutation {
         description: String!
         views: Int
         price: Float!
-    ): Course
+    ): Course,
+    addStudentCourse(
+        courseId: ID!,
+        studentId: ID!
+    ): Course,
+    updateOne(
+        title: String
+        description: String
+        price: Float!
+    ): ID,
+    deleteOne(
+        id: ID!
+    ): Boolean
 }
-`;
+`);
 
 export default courseTypeDef;

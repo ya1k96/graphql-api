@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const {Schema, model, SchemaTypes} = mongoose;
-const {String, Number} = SchemaTypes;
+const {String, Number, ObjectId} = SchemaTypes;
 
 const schema = new Schema({
     title: {
@@ -19,7 +19,11 @@ const schema = new Schema({
     price: {
         type: String,
         required: true
-    }
+    },
+    students: [{
+        type: ObjectId,
+        ref: 'students'
+    }]
 });
 const coursesModel = model('courses', schema);
 
